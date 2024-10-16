@@ -8,7 +8,6 @@ class MainController extends Controller
 {
     public function showIndex()
     {
-        // Возвращаем вид home
         return view('home');
     }
 
@@ -16,15 +15,15 @@ class MainController extends Controller
 
     public function showArray()
     {
-        // Создаем двумерный массив из ассоциативных массивов
         $array = [
-            ['id' => 1, 'title' => 'продукт 1', 'price' => 500, 'path' => 'img/1.jpg'],
-            ['id' => 2, 'title' => 'продукт 2', 'price' => 300, 'path' => 'img/2.jpg'],
-            ['id' => 3, 'title' => 'продукт 3', 'price' => 700, 'path' => 'img/3.jpg'],
-            // Добавьте другие продукты по необходимости
+            ['id' => 1, 'title' => 'картина 1', 'price' => 500, 'path' => 'img/art.jpg'],
+            ['id' => 2, 'title' => 'картина 2', 'price' => 300, 'path' => 'img/art.jpg'],
+            ['id' => 3, 'title' => 'картина 3', 'price' => 700, 'path' => 'img/art.jpg'],
+            ['id' => 1, 'title' => 'картина 4', 'price' => 500, 'path' => 'img/art.jpg'],
+            ['id' => 2, 'title' => 'картина 5', 'price' => 300, 'path' => 'img/art.jpg'],
+            ['id' => 3, 'title' => 'картина 6', 'price' => 700, 'path' => 'img/art.jpg'],
         ];
 
-        // Возвращаем вид home с массивом
         return view('home', compact('array'));
     }
 }

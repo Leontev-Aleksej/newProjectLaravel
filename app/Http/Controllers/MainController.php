@@ -24,6 +24,6 @@ class MainController extends Controller
             ['id' => 3, 'title' => 'картина 6', 'price' => 700, 'path' => 'img/art.jpg'],
         ];
 
-        return view('home', compact('array'));
+        return view('array', compact('array'));
     }
 }

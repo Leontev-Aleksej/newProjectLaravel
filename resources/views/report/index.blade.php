@@ -19,13 +19,16 @@
 </header>
 
 <div id="content">
-    <h1>Добро пожаловать на наш сайт!</h1>
-    <img src="/resources/img/9oiaEmBgRh8.jpg" alt="Картинка">
-    <p>
-        Это текст о рыбах. Рыбы — это водные позвоночные, которые могут жить в пресной или соленой воде. 
-        Они имеют множество форм и размеров, от крошечных гуппи до огромных акул. 
-        Рыбы играют важную роль в экосистемах и являются важным ресурсом для людей.
-    </p>
+    <div style = "display: flex; flex-wrap: wrap; gap: 10px">
+         @foreach ($array as $card)
+            <div>
+                <img src="./img/art.jpg" alt="карточка">
+                {{-- <img src="{{ $card['path'] }}" alt="карточка"> --}}
+                <h2>{{ $card['numbre'] }}. {{ $card['timestamps'] }}</h2>
+                <p>{{ $card['description'] }} р.</p>
+            </div>
+        @endforeach
+    </div>
 </div>
 
 <footer>

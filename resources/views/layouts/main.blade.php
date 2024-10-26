@@ -8,13 +8,13 @@
 </head>
 <body>
     <header>
-        <div class="logo">Логотип сайта</div>
-    </header>
+        <div class="logo">Нарушений.Нет</div>
+    </header> 
     <main>
         @yield('content')
     </main>
     <footer>
-        <p>&copy; 2024 Леонтьев Алексей Евгеньевич</p>
+        <p>&copy; Леонтьев Алексей 2024</p>
     </footer>
 </body>
 </html>

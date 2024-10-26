@@ -44,3 +44,8 @@ img {
     height: 300px;
     width: 300px;
 }
+.report_number{
+    height: 50px;
+    width: 150px;
+    border: 1px solid rgb(255, 96, 96);
+}

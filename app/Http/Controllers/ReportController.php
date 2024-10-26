@@ -20,11 +20,12 @@ class ReportController extends Controller
      */
     public function store(Request $request, Report $report)
     {
-        $data = $request->validate([
-            'description' => 'text',
+        $request->validate([
+            'number' => 'required',
+            'description' => 'required',
           ]);
-          $data['number'] = uniqid();
-          $report->create($data);
+
+          Report::create($request->all());
           return redirect()->back();
     }
 
@@ -33,7 +34,7 @@ class ReportController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view('report.show', compact('report'));
     }
 
     /**
@@ -41,7 +42,13 @@ class ReportController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'number' => 'required',
+            'description' => 'required',
+        ]);
+
+        Report::update($request->all());
+        return redirect()->back();
     }
 
     /**

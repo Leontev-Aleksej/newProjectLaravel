@@ -13,10 +13,26 @@ return new class extends Migration
     {
         Schema::create('reports', function (Blueprint $table) {
             $table->id();
-            $table->text('description');
-            $table->string('number', 100);
+            // $table->integer('report_id')->unsigned();
+            $table->string('number', 100)->nullable();
+            $table->text('description')->nullable();
             $table->timestamps('');
+            // $table->integer('user_id');
+            // $table->foreign('user_id')->references('id')->on('users');
+            // $table->integer('status_id');
+            // $table->foreign('status_id')->references('id')->on('statuses');
             $table->softDeletes();
+
+            $table->foreignId('user_id')
+            ->nullable()
+            ->constrained()
+            ->cascadeOnUpdate()
+            ->nullOnDelete();
+            $table->foreignId('status_id')
+            ->nullable()
+            ->constrained()
+            ->cascadeOnUpdate()
+            ->nullOnDelete();
         });
     }
 
